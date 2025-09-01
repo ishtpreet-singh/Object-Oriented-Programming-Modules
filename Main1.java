@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
  class Car {
     int speed;
     int fuel;
@@ -47,11 +50,22 @@ class SportsCar extends Car{
         }
     }
 }
+class Bus {
+    //
+    
+     void passengerEnter(){
+        System.out.print("Enter Num of Passenger Enter: ");
+    }
+     void passengerExit(){
+        System.out.print("Enter Num of Passenger Exit: ");}
+    }
 
 public class Main1{
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Car myCar = new Car();
         SportsCar mySportsCar = new SportsCar();
+        Bus mybus=new Bus();
 
         System.out.println("=== Normal Car ===");
         myCar.accelerate();
@@ -60,5 +74,17 @@ public class Main1{
         System.out.println("\n=== Sports Car ===");
         mySportsCar.accelerate();
         mySportsCar.decelerate();
+
+        System.out.println("=== Bus ===");
+        
+        
+        mybus.passengerEnter();
+        int x= scanner.nextInt();
+        System.out.println("Number of passengers enter in the bus are "+x);
+        mybus.passengerExit();
+        int y= scanner.nextInt();
+        System.out.println("Number of passengers exit in the bus are "+y);
+        System.out.println("Remaining passengers: "+(x-y));
     }
 }
+ 
